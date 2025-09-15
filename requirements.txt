@@ -2,3 +2,4 @@ Flask>=3.0.0
 feedparser>=6.0.10
 requests>=2.32.3
 waitress>=3.0.0
+python-vlc>=3.0.20123
