@@ -1,1064 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Trending Tech News - Ultimate Interactive Experience</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Alliance Group Idle Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap');
-    
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
-    
-    :root {
-      --primary-color: #00ffaa;
-      --secondary-color: #ff6b35;
-      --accent-color: #4285f4;
-      --success-color: #10b981;
-      --warning-color: #f59e0b;
-      --danger-color: #ef4444;
-      --neon-green: #00ff88;
-      --neon-orange: #ff4500;
-      --neon-blue: #0080ff;
-      --neon-purple: #8a2be2;
-      --bg-primary: #0d1117;
-      --bg-secondary: #161b22;
-      --bg-tertiary: #21262d;
-      --text-primary: #f0f6fc;
-      --text-secondary: #8b949e;
-      --text-accent: #58a6ff;
-      --glass-bg: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.15);
-      --hologram-gradient: linear-gradient(135deg, #00ffaa 0%, #ff6b35 25%, #4285f4 50%, #8a2be2 75%, #00ff88 100%);
-      --time-gradient: linear-gradient(135deg, #00ffaa 0%, #4285f4 50%, #ff6b35 100%);
-      --shadow-glow: 0 0 30px rgba(0, 255, 170, 0.3);
-    }
-    
-    html, body {
-      margin: 0; padding: 0; width: 100%; height: 100%;
-      background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
-      color: var(--text-primary);
-      font-family: "Space Grotesk", "Inter", sans-serif;
-      overflow-x: hidden;
-      cursor: none;
-      position: relative;
-    }
-    
-    /* Matrix-style digital rain */
-    .matrix-rain {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.08;
-    }
-    
-    .matrix-column {
-      position: absolute;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: var(--neon-green);
-      animation: matrixFall linear infinite;
-    }
-    
-    @keyframes matrixFall {
-      0% { transform: translateY(-100vh); opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
-    }
-    
-    /* Dynamic 3D background geometry */
-    .bg-geometry {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      perspective: 1000px;
-      pointer-events: none;
-      z-index: 2;
-    }
-    
-    .geometry-shape {
-      position: absolute;
-      border: 2px solid rgba(0, 255, 170, 0.15);
-      background: rgba(0, 255, 170, 0.03);
-      animation: float3dComplex 25s infinite linear;
-      border-radius: 8px;
-    }
-    
-    .geometry-shape:nth-child(1) {
-      width: 180px; height: 180px;
-      top: 15%; right: 5%;
-      transform: rotateX(45deg) rotateY(0deg);
-      animation-delay: 0s;
-      border-color: rgba(255, 107, 53, 0.2);
-      background: rgba(255, 107, 53, 0.05);
-    }
-    
-    .geometry-shape:nth-child(2) {
-      width: 120px; height: 120px;
-      bottom: 20%; left: 8%;
-      transform: rotateX(0deg) rotateY(45deg);
-      animation-delay: -8s;
-      border-color: rgba(66, 133, 244, 0.2);
-      background: rgba(66, 133, 244, 0.05);
-    }
-    
-    .geometry-shape:nth-child(3) {
-      width: 90px; height: 90px;
-      top: 40%; left: 3%;
-      transform: rotateX(30deg) rotateY(60deg);
-      animation-delay: -16s;
-      border-color: rgba(138, 43, 226, 0.2);
-      background: rgba(138, 43, 226, 0.05);
-    }
-    
-    @keyframes float3dComplex {
-      0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 0.3; }
-      33% { transform: rotateX(120deg) rotateY(120deg) rotateZ(0deg) scale(1.1); opacity: 0.6; }
-      66% { transform: rotateX(240deg) rotateY(240deg) rotateZ(120deg) scale(0.9); opacity: 0.4; }
-      100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(240deg) scale(1); opacity: 0.3; }
-    }
-    
-    /* System Status Bar */
-    .system-status {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 70px;
-      background: linear-gradient(135deg, rgba(13, 17, 23, 0.95), rgba(22, 27, 34, 0.9));
-      backdrop-filter: blur(20px);
-      border-bottom: 2px solid var(--primary-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 2rem;
-      z-index: 1000;
-      animation: slideDownSystem 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow: 0 4px 20px rgba(0, 255, 170, 0.1);
-    }
-    
-    .clock-container {
+
+    body {
+      background: #ffffff;
+      color: #1e293b;
+      font-family: "Inter", sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.3rem;
-    }
-    
-    .system-clock {
-      font-size: 2.5rem;
-      font-weight: 700;
-      font-family: 'JetBrains Mono', monospace;
-      background: var(--time-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(0, 255, 170, 0.4);
-      letter-spacing: 2px;
-      position: relative;
-      animation: clockGlow 3s ease-in-out infinite alternate;
-    }
-    
-    .clock-date {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      opacity: 0.8;
-    }
-    
-    @keyframes clockGlow {
-      0% { filter: drop-shadow(0 0 10px rgba(0, 255, 170, 0.3)); }
-      100% { filter: drop-shadow(0 0 25px rgba(0, 255, 170, 0.6)); }
-    }
-    
-    /* Main Container */
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: calc(100vh - 140px);
-      padding: 2rem;
-      perspective: 1200px;
-      position: relative;
-      z-index: 10;
-      margin-top: 70px;
-    }
-    
-    /* Ultra-Advanced Logo */
-    .nexus-logo {
-      position: relative;
-      width: 100px; height: 100px;
-      margin-bottom: 1.5rem;
-      transform-style: preserve-3d;
-    }
-    
-    .logo-core {
-      width: 100%; height: 100%;
-      background: conic-gradient(var(--primary-color), var(--secondary-color), var(--accent-color), var(--neon-purple), var(--primary-color));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: logoSpin 12s linear infinite, logoPulse 4s ease-in-out infinite;
-      position: relative;
+      justify-content: flex-start;
+      height: 100vh;
+      width: 100vw;
       overflow: hidden;
-      box-shadow: var(--shadow-glow);
     }
-    
-    .logo-core::before {
-      content: '';
-      position: absolute;
-      top: 8px; left: 8px; right: 8px; bottom: 8px;
-      background: var(--bg-primary);
-      border-radius: 50%;
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      padding: 1rem;
     }
-    
-    .logo-symbol {
-      font-size: 40px;
-      position: relative;
-      z-index: 2;
-      color: var(--primary-color);
-      animation: symbolRotate 8s ease-in-out infinite;
-      text-shadow: 0 0 10px var(--primary-color);
-    }
-    
-    .logo-rings {
-      position: absolute;
-      top: -15px; left: -15px; right: -15px; bottom: -15px;
-      border: 2px solid var(--primary-color);
-      border-radius: 50%;
-      animation: ringRotate 18s linear infinite reverse;
-      opacity: 0.6;
-    }
-    
-    .logo-rings:nth-child(2) {
-      top: -25px; left: -25px; right: -25px; bottom: -25px;
-      border-color: var(--secondary-color);
-      animation-duration: 15s;
-      opacity: 0.4;
-    }
-    
-    @keyframes logoSpin { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
-    @keyframes logoPulse { 
-      0%, 100% { box-shadow: 0 0 30px rgba(0, 255, 170, 0.4); } 
-      50% { box-shadow: 0 0 50px rgba(0, 255, 170, 0.7); } 
-    }
-    @keyframes symbolRotate { 
-      0%, 100% { transform: rotateZ(0deg) scale(1); } 
-      50% { transform: rotateZ(180deg) scale(1.1); } 
-    }
-    @keyframes ringRotate { 0% { transform: rotateZ(0deg); } 100% { transform: rotateZ(360deg); } }
-    
-    /* Glitch Title */
-    .glitch-title {
-      font-size: clamp(2rem, 5vw, 4rem);
+
+    .header h1 {
+      font-size: 3.5rem;
       font-weight: 800;
-      text-align: center;
-      margin: 1rem 0;
-      position: relative;
-      background: var(--hologram-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(0, 255, 170, 0.3);
+      color: #0ea5e9;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
     }
-    
-    /* News Stage */
-    .quantum-news-stage {
-      position: relative;
-      width: 92%;
-      max-width: 1200px;
-      min-height: 350px;
-      background: var(--glass-bg);
-      backdrop-filter: blur(25px);
-      border-radius: 20px;
-      border: 2px solid var(--glass-border);
-      padding: 2.5rem;
-      margin: 2rem 0;
-      transform-style: preserve-3d;
-      animation: stageFloat 8s ease-in-out infinite;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 255, 170, 0.1);
-    }
-    
-    .quantum-news-stage::before {
-      content: '';
-      position: absolute;
-      top: -2px; left: -2px; right: -2px; bottom: -2px;
-      background: var(--hologram-gradient);
-      border-radius: 20px;
-      z-index: -1;
-      opacity: 0.1;
-    }
-    
-    @keyframes stageFloat {
-      0%, 100% { transform: translateY(0) rotateX(0deg); }
-      50% { transform: translateY(-8px) rotateX(1deg); }
-    }
-    
-    .ai-headline {
-      font-size: clamp(1.8rem, 4vw, 3.2rem);
-      line-height: 1.3;
-      text-align: center;
+
+    .header h2 {
+      font-size: 2rem;
       font-weight: 600;
-      position: relative;
-      z-index: 2;
-      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transform-style: preserve-3d;
-      color: var(--text-primary);
-      margin-top: 1rem;
+      color: #1e40af;
+      text-shadow: 0 2px 6px rgba(30, 64, 175, 0.1);
     }
-    
-    .ai-headline a {
-      color: var(--text-primary);
-      text-decoration: none;
-      background: var(--hologram-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+
+    /* Logo Arrangement */
+    .logo-wrapper {
       position: relative;
+      width: 90%;
+      margin: 2rem auto 2rem;
+      height: 200px; /* more space for bigger logos */
+    }
+
+    .logo {
+      max-width: 160px; /* increased size */
+      height: auto;
+      opacity: 0.95;
       transition: all 0.4s ease;
-      display: inline-block;
-    }
-    
-    .ai-headline a:hover {
-      transform: translateZ(20px) scale(1.02);
-      cursor: pointer;
-      filter: brightness(1.3) drop-shadow(0 0 15px rgba(0, 255, 170, 0.4));
-    }
-    
-    /* Category system */
-    .category-constellation {
+      border-radius: 12px;
+      background: #f8fafc;
+      padding: 0.8rem;
+      border: 2px solid rgba(14, 165, 233, 0.1);
+      box-shadow: 0 4px 16px rgba(14, 165, 233, 0.08);
       position: absolute;
-      top: 20px; right: 20px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      z-index: 3;
     }
-    
-    .category-orb {
-      background: var(--bg-secondary);
-      backdrop-filter: blur(10px);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      border: 1px solid var(--glass-border);
-      font-size: 0.75rem;
-      font-weight: 600;
-      position: relative;
-      animation: orbFloat 5s ease-in-out infinite;
-      color: var(--text-accent);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+    .logo img {
+      width: 100%;
+      height: auto;
+      max-height: 90px; /* taller logo display */
+      object-fit: contain;
     }
-    
-    .category-orb:nth-child(1) { 
-      border-color: var(--primary-color); 
-      color: var(--primary-color); 
-      animation-delay: 0s;
+
+    /* Left logo */
+    .logo-left {
+      left: 5%;
+      top: 0;
     }
-    .category-orb:nth-child(2) { 
-      border-color: var(--secondary-color); 
-      color: var(--secondary-color);
-      animation-delay: -1.5s;
+
+    /* Right logo */
+    .logo-right {
+      right: 5%;
+      top: 0;
     }
-    .category-orb:nth-child(3) { 
-      border-color: var(--accent-color); 
-      color: var(--accent-color);
-      animation-delay: -3s;
-    }
-    
-    @keyframes orbFloat {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-6px) rotate(1deg); }
-    }
-    
-    /* Progress system */
-    .progress-nexus {
-      position: fixed;
-      bottom: 30px;
+
+    /* Centered lower logo */
+    .logo-center {
       left: 50%;
       transform: translateX(-50%);
+      bottom: 0;
+    }
+
+    .logo:hover {
+      opacity: 1;
+      transform: scale(1.08);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+      background: #ffffff;
+    }
+
+    /* News Section */
+    .news-carousel {
+      flex: 1;
+      width: 95%;
+      max-width: 1000px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #f8fafc;
+      border: 1px solid rgba(14, 165, 233, 0.1);
+      box-shadow: 0 8px 32px rgba(14, 165, 233, 0.06);
+      padding: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .news-card {
+      flex: 0 0 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      z-index: 100;
+      text-align: center;
+      padding: 1rem;
     }
-    
-    .progress-timeline {
-      width: 350px;
-      height: 4px;
-      background: rgba(0, 255, 170, 0.15);
-      border-radius: 2px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+
+    .news-image {
+      max-width: 100%;
+      height: 220px; /* bigger image for tall screen */
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.1);
     }
-    
-    .timeline-fill {
-      height: 100%;
-      background: var(--hologram-gradient);
-      border-radius: 2px;
-      position: relative;
-      transition: width 0.1s linear;
-      box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+
+    .news-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 1rem;
     }
-    
-    /* Loading screen */
-    .loading-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(13, 17, 23, 0.98), rgba(22, 27, 34, 0.95));
+
+    .news-content {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #475569;
+      max-height: 350px;
+      overflow-y: auto;
+      text-align: justify;
+    }
+
+    .indicators {
       display: flex;
-      align-items: center;
       justify-content: center;
-      z-index: 5000;
-      opacity: 1;
-      transition: opacity 1s ease;
+      margin-top: 1rem;
+      gap: 0.6rem;
     }
-    
-    .loading-overlay.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-    
-    .nexus-loader {
-      width: 120px;
-      height: 120px;
-      position: relative;
-    }
-    
-    .loader-ring {
-      position: absolute;
-      border: 3px solid transparent;
-      border-top: 3px solid var(--primary-color);
+
+    .dot {
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      animation: loaderSpin 1.5s linear infinite;
+      background: rgba(14, 165, 233, 0.2);
+      cursor: pointer;
+      transition: all 0.3s;
     }
-    
-    .loader-ring:nth-child(1) {
-      width: 120px; height: 120px;
-      top: 0; left: 0;
+
+    .dot.active {
+      background: #0ea5e9;
+      transform: scale(1.3);
     }
-    
-    .loader-ring:nth-child(2) {
-      width: 90px; height: 90px;
-      top: 15px; left: 15px;
-      border-top-color: var(--secondary-color);
-      animation-duration: 1s;
-      animation-direction: reverse;
-    }
-    
-    .loader-ring:nth-child(3) {
-      width: 60px; height: 60px;
-      top: 30px; left: 30px;
-      border-top-color: var(--accent-color);
-      animation-duration: 0.8s;
-    }
-    
-    @keyframes loaderSpin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    /* Responsive */
+
+    /* Responsiveness */
     @media (max-width: 768px) {
-      .system-clock {
-        font-size: 2rem;
+      .header h1 {
+        font-size: 2.2rem;
       }
-      .clock-date {
-        font-size: 0.8rem;
+      .header h2 {
+        font-size: 1.4rem;
       }
-      .progress-timeline { width: 280px; }
-      .quantum-news-stage { 
-        padding: 2rem 1.5rem; 
-        width: 96%; 
-        min-height: 300px;
+      .logo {
+        max-width: 120px;
       }
-      .ai-headline { 
-        font-size: clamp(1.4rem, 5vw, 2.5rem); 
-        margin-top: 0.5rem;
+      .logo img {
+        max-height: 70px;
       }
-      .system-status { 
-        padding: 0 1rem; 
-        height: 60px;
+      .news-image {
+        height: 160px;
       }
-      .main-container { 
-        margin-top: 60px;
-        padding: 1rem;
-      }
-      .category-constellation {
-        position: relative;
-        top: auto; right: auto;
-        margin-bottom: 1rem;
-        justify-content: center;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .system-clock {
-        font-size: 1.8rem;
-      }
-      .clock-date {
-        font-size: 0.7rem;
-      }
-      .category-constellation {
-        gap: 8px;
-      }
-      .category-orb {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.7rem;
-      }
-    }
-    
-    /* Animation utilities */
-    @keyframes slideDownSystem {
-      0% { transform: translateY(-100%); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: var(--bg-secondary);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: var(--primary-color);
-      border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--secondary-color);
     }
   </style>
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="nexus-loader">
-      <div class="loader-ring"></div>
-      <div class="loader-ring"></div>
-      <div class="loader-ring"></div>
+  <!-- Header -->
+  <div class="header">
+    <h1>Welcome</h1>
+    <h2>Alliance Group of Company</h2>
+  </div>
+
+  <!-- Logos -->
+  <div class="logo-wrapper">
+    <div class="logo logo-left">
+      <img src="../logo/nexcore_logo.jpg" alt="Nexcore Alliance Logo">
+    </div>
+    <div class="logo logo-right">
+      <img src="../logo/sa_logo.jpg" alt="Student Alliance Logo">
+    </div>
+    <div class="logo logo-center">
+      <img src="../logo/edu_logo.jpg" alt="Edu Momentum Logo">
     </div>
   </div>
 
-  <!-- Matrix Rain Effect -->
-  <div class="matrix-rain" id="matrixRain"></div>
-
-  <!-- 3D Background Geometry -->
-  <div class="bg-geometry">
-    <div class="geometry-shape"></div>
-    <div class="geometry-shape"></div>
-    <div class="geometry-shape"></div>
-  </div>
-
-  <!-- System Status Bar -->
-  <div class="system-status">
-    <div class="clock-container">
-      <div class="system-clock" id="systemTime">00:00 AM</div>
-      <div class="clock-date" id="systemDate">Loading...</div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="main-container">
-    <!-- Nexus Logo -->
-    <div class="nexus-logo">
-      <div class="logo-core">
-        <div class="logo-symbol">⚡</div>
-      </div>
-      <div class="logo-rings"></div>
-      <div class="logo-rings"></div>
-    </div>
-
-    <!-- Title -->
-    <h1 class="glitch-title">TRENDING TECH NEWS</h1>
-    <div style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8; color: var(--text-secondary);">
-      🚀 AI-Powered • 🌐 Real-Time • 🎯 Smart Analytics
-    </div>
-
-    <!-- News Stage -->
-    <div class="quantum-news-stage">
-      <!-- Categories -->
-      <div class="category-constellation">
-        <div class="category-orb" id="categoryPrimary">TECH</div>
-        <div class="category-orb" id="categorySecondary">LIVE</div>
-        <div class="category-orb" id="categoryTertiary">AI</div>
-      </div>
-      
-      <!-- Headline Display -->
-      <div class="ai-headline" id="aiHeadline">
-        Initializing quantum neural networks...
+  <!-- News Section -->
+  <div class="news-carousel">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="news-card">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop" class="news-image">
+        <div class="news-title">AI Revolution Transforms Global Industries in 2025</div>
+        <div class="news-content">Artificial Intelligence is transforming industries at an unprecedented pace...</div>
       </div>
     </div>
-  </div>
-
-  <!-- Progress Bar -->
-  <div class="progress-nexus">
-    <div class="progress-timeline">
-      <div class="timeline-fill" id="timelineFill" style="width: 0%"></div>
+    <div class="indicators">
+      <div class="dot active"></div>
     </div>
   </div>
-
-  <script>
-    class UltimateNewsHub {
-      constructor() {
-        this.headlines = [];
-        this.currentIndex = 0;
-        this.rotateMs = 8000;
-        this.isInitialized = false;
-        this.progressInterval = null;
-        this.rotationInterval = null;
-        this.connectionAttempts = 0;
-        this.maxConnectionAttempts = 3;
-        
-        // Make instance globally available
-        window.newsHub = this;
-        
-        this.init();
-      }
-
-      async init() {
-        this.showLoadingScreen();
-        await this.delay(2000);
-        
-        this.createMatrixRain();
-        this.setupEventListeners();
-        
-        await this.loadNewsData();
-        
-        this.startSystemMonitoring();
-        this.startHeadlineRotation();
-        
-        this.hideLoadingScreen();
-        this.isInitialized = true;
-        
-        console.log('Trending Tech News initialized successfully');
-      }
-
-      showLoadingScreen() {
-        document.getElementById('loadingOverlay').classList.remove('hidden');
-      }
-
-      hideLoadingScreen() {
-        setTimeout(() => {
-          document.getElementById('loadingOverlay').classList.add('hidden');
-        }, 1000);
-      }
-
-      delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-      }
-
-      // === Matrix Rain Effect ===
-      createMatrixRain() {
-        const container = document.getElementById('matrixRain');
-        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZアイウエオカキクケコサシスセソ';
-        
-        for (let i = 0; i < 12; i++) {
-          const column = document.createElement('div');
-          column.className = 'matrix-column';
-          column.style.left = Math.random() * 100 + '%';
-          column.style.animationDuration = (Math.random() * 3 + 2) + 's';
-          column.style.animationDelay = Math.random() * 2 + 's';
-          
-          let columnText = '';
-          for (let j = 0; j < 15; j++) {
-            columnText += chars[Math.floor(Math.random() * chars.length)] + '<br>';
-          }
-          column.innerHTML = columnText;
-          
-          container.appendChild(column);
-        }
-      }
-
-      // === Event Listeners ===
-      setupEventListeners() {
-        // Keyboard controls
-        document.addEventListener('keydown', (e) => {
-          switch(e.key) {
-            case 'ArrowRight':
-            case ' ':
-              this.showHeadline();
-              break;
-            case 'ArrowLeft':
-              this.currentIndex = Math.max(0, this.currentIndex - 2);
-              this.showHeadline();
-              break;
-            case 'r':
-            case 'R':
-              this.loadNewsData();
-              break;
-          }
-        });
-
-        // Click to advance (for testing)
-        document.getElementById('aiHeadline').addEventListener('click', () => {
-          this.showHeadline();
-        });
-      }
-
-      // === News Data Management ===
-      async loadNewsData() {
-        try {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 10000);
-          
-          const response = await fetch('/api/news', {
-            signal: controller.signal,
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            }
-          });
-          
-          clearTimeout(timeoutId);
-          
-          if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-          }
-          
-          const contentType = response.headers.get('content-type');
-          
-          if (!contentType || !contentType.includes('application/json')) {
-            console.warn('API returned non-JSON content:', contentType);
-            const text = await response.text();
-            console.log('Response preview:', text.substring(0, 200));
-            throw new Error('Invalid JSON response from server');
-          }
-          
-          const data = await response.json();
-          
-          if (data && data.items && Array.isArray(data.items)) {
-            this.headlines = this.processNewsData(data.items);
-            this.connectionAttempts = 0;
-            console.log(`Loaded ${this.headlines.length} headlines from API`);
-          } else {
-            throw new Error('Invalid data structure received from API');
-          }
-          
-        } catch (error) {
-          console.error('Failed to fetch from API:', error.message);
-          this.connectionAttempts++;
-          
-          if (this.connectionAttempts >= this.maxConnectionAttempts) {
-            console.log('Max connection attempts reached, using fallback data');
-            this.headlines = this.getEnhancedMockData();
-          } else {
-            // Retry after a delay
-            setTimeout(() => this.loadNewsData(), 2000);
-            return;
-          }
-        }
-        
-        // Start showing headlines if this is the first successful load
-        if (!this.isInitialized && this.headlines.length > 0) {
-          this.showHeadline();
-        }
-      }
-
-      getEnhancedMockData() {
-        return [
-          {
-            title: "Revolutionary Quantum AI Achieves Breakthrough in Neural Computing Architecture",
-            category: "QUANTUM",
-            priority: "high",
-            source: "TechCrunch",
-            link: "#"
-          },
-          {
-            title: "Neuralink Successfully Restores Vision to Blind Patients Using Advanced Brain-Computer Interface",
-            category: "BIOTECH",
-            priority: "high",
-            source: "Nature",
-            link: "#"
-          },
-          {
-            title: "SpaceX Launches First Commercial Quantum Communication Satellite Network",
-            category: "SPACE",
-            priority: "high",
-            source: "Space News",
-            link: "#"
-          },
-          {
-            title: "OpenAI GPT-5 Demonstrates Unprecedented Scientific Research Capabilities",
-            category: "AI",
-            priority: "high",
-            source: "MIT Review",
-            link: "#"
-          },
-          {
-            title: "Tesla's Revolutionary Neural Processing Chip Enables True Level 5 Autonomous Driving",
-            category: "AUTO",
-            priority: "medium",
-            source: "Electrek",
-            link: "#"
-          },
-          {
-            title: "Breakthrough Fusion Reactor Achieves Sustained Net Energy Gain for 72 Hours",
-            category: "ENERGY",
-            priority: "high",
-            source: "Science",
-            link: "#"
-          },
-          {
-            title: "Meta Unveils Photorealistic Holographic Displays for Next-Generation VR Experience",
-            category: "VR",
-            priority: "medium",
-            source: "The Verge",
-            link: "#"
-          },
-          {
-            title: "CRISPR 3.0 Successfully Eliminates Hereditary Diseases in Human Clinical Trials",
-            category: "BIOTECH",
-            priority: "high",
-            source: "Cell",
-            link: "#"
-          }
-        ];
-      }
-
-      processNewsData(items) {
-        return items.map(item => ({
-          ...item,
-          category: this.categorizeNews(item.title),
-          priority: this.determinePriority(item.title)
-        }));
-      }
-
-      categorizeNews(title) {
-        const categories = {
-          'QUANTUM': ['quantum', 'qubit', 'superposition'],
-          'AI': ['ai', 'artificial intelligence', 'machine learning', 'neural', 'gpt'],
-          'BIOTECH': ['crispr', 'genetic', 'biotech', 'medical', 'brain', 'neuralink'],
-          'SPACE': ['spacex', 'nasa', 'mars', 'satellite', 'rocket'],
-          'AUTO': ['tesla', 'autonomous', 'self-driving', 'electric vehicle'],
-          'ENERGY': ['fusion', 'solar', 'renewable', 'battery'],
-          'VR': ['virtual reality', 'meta', 'holographic', 'ar'],
-          'CRYPTO': ['blockchain', 'cryptocurrency', 'bitcoin', 'web3']
-        };
-        
-        const lowerTitle = title.toLowerCase();
-        for (const [category, keywords] of Object.entries(categories)) {
-          if (keywords.some(keyword => lowerTitle.includes(keyword))) {
-            return category;
-          }
-        }
-        return 'TECH';
-      }
-
-      determinePriority(title) {
-        const highPriorityWords = ['breakthrough', 'revolutionary', 'first', 'unprecedented'];
-        return highPriorityWords.some(word => title.toLowerCase().includes(word)) ? 'high' : 'medium';
-      }
-
-      // === Headline Display ===
-      showHeadline() {
-        if (this.headlines.length === 0) {
-          document.getElementById('aiHeadline').textContent = 'No headlines available. Check connection.';
-          return;
-        }
-        
-        const item = this.headlines[this.currentIndex % this.headlines.length];
-        const headlineEl = document.getElementById('aiHeadline');
-        
-        // Update categories
-        document.getElementById('categoryPrimary').textContent = item.category || 'TECH';
-        document.getElementById('categorySecondary').textContent = item.priority === 'high' ? 'HOT' : 'LIVE';
-        document.getElementById('categoryTertiary').textContent = item.source || 'AI';
-        
-        // Smooth transition effect
-        headlineEl.style.opacity = '0';
-        headlineEl.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-          if (item.link && item.link !== '#') {
-            headlineEl.innerHTML = `<a href="${this.escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(item.title)}</a>`;
-          } else {
-            headlineEl.textContent = item.title;
-          }
-          
-          headlineEl.style.opacity = '1';
-          headlineEl.style.transform = 'translateY(0)';
-          
-          this.startProgressAnimation();
-        }, 400);
-        
-        this.currentIndex++;
-      }
-
-      escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text || '';
-        return div.innerHTML;
-      }
-
-      // === System Monitoring ===
-      startSystemMonitoring() {
-        // Update system time and date
-        const updateDateTime = () => {
-          const now = new Date();
-          
-          // 12-hour format time
-          const timeOptions = { 
-            hour12: true, 
-            hour: '2-digit', 
-            minute: '2-digit'
-          };
-          document.getElementById('systemTime').textContent = now.toLocaleTimeString('en-US', timeOptions);
-          
-          // Date format
-          const dateOptions = { 
-            weekday: 'short', 
-            month: 'short', 
-            day: 'numeric',
-            year: 'numeric'
-          };
-          document.getElementById('systemDate').textContent = now.toLocaleDateString('en-US', dateOptions);
-        };
-        
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-      }
-
-      updateConnectionStatus(status) {
-        const statusEl = document.getElementById('connectionStatus');
-        statusEl.textContent = status;
-        
-        // Update color and border based on status
-        const styles = {
-          'ONLINE': {
-            color: 'var(--success-color)',
-            borderColor: 'var(--success-color)',
-            boxShadow: '0 0 15px rgba(16, 185, 129, 0.3)'
-          },
-          'OFFLINE': {
-            color: 'var(--danger-color)',
-            borderColor: 'var(--danger-color)',
-            boxShadow: '0 0 15px rgba(239, 68, 68, 0.3)'
-          },
-          'CONNECTING': {
-            color: 'var(--warning-color)',
-            borderColor: 'var(--warning-color)',
-            boxShadow: '0 0 15px rgba(245, 158, 11, 0.3)'
-          },
-          'RETRYING': {
-            color: 'var(--warning-color)',
-            borderColor: 'var(--warning-color)',
-            boxShadow: '0 0 15px rgba(245, 158, 11, 0.3)'
-          }
-        };
-        
-        const style = styles[status] || styles['ONLINE'];
-        Object.assign(statusEl.style, style);
-      }
-
-      // === Progress Animation ===
-      startProgressAnimation() {
-        const progressBar = document.getElementById('timelineFill');
-        let width = 0;
-        
-        if (this.progressInterval) {
-          clearInterval(this.progressInterval);
-        }
-        
-        this.progressInterval = setInterval(() => {
-          width += (100 / (this.rotateMs / 100));
-          progressBar.style.width = width + '%';
-          
-          if (width >= 100) {
-            width = 0;
-          }
-        }, 100);
-      }
-
-      // === Headline Rotation ===
-      startHeadlineRotation() {
-        if (this.rotationInterval) {
-          clearInterval(this.rotationInterval);
-        }
-        
-        this.rotationInterval = setInterval(() => {
-          this.showHeadline();
-        }, this.rotateMs);
-        
-        // Refresh data every 5 minutes
-        setInterval(() => {
-          this.loadNewsData();
-        }, 5 * 60 * 1000);
-        
-        // Page reload every hour to prevent memory leaks
-        setTimeout(() => {
-          location.reload();
-        }, 60 * 60 * 1000);
-      }
-
-      // === Public Methods ===
-      trackClick(title) {
-        console.log('Headline clicked:', title);
-        // Analytics tracking could be implemented here
-      }
-
-      // Manual controls
-      nextHeadline() {
-        this.showHeadline();
-      }
-
-      previousHeadline() {
-        this.currentIndex = Math.max(0, this.currentIndex - 2);
-        this.showHeadline();
-      }
-
-      refreshNews() {
-        this.loadNewsData();
-      }
-
-      // === Utility Methods ===
-      getSystemStats() {
-        return {
-          headlines: this.headlines.length,
-          currentIndex: this.currentIndex,
-          isInitialized: this.isInitialized,
-          connectionAttempts: this.connectionAttempts,
-          rotateMs: this.rotateMs
-        };
-      }
-    }
-
-    // Initialize the news hub when DOM is ready
-    document.addEventListener('DOMContentLoaded', () => {
-      new UltimateNewsHub();
-    });
-
-    // Global functions for external control
-    window.nextHeadline = () => window.newsHub?.nextHeadline();
-    window.previousHeadline = () => window.newsHub?.previousHeadline();
-    window.refreshNews = () => window.newsHub?.refreshNews();
-    window.getStats = () => window.newsHub?.getSystemStats();
-
-    // Error handling
-    window.addEventListener('error', (e) => {
-      console.error('Global error:', e.error);
-    });
-
-    // Handle page visibility changes
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        if (window.newsHub?.progressInterval) {
-          clearInterval(window.newsHub.progressInterval);
-        }
-      } else {
-        if (window.newsHub?.isInitialized) {
-          window.newsHub.startProgressAnimation();
-        }
-      }
-    });
-  </script>
 </body>
 </html>
