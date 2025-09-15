@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RFID Cube Admin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1, h2 { color: #66ccff; }
+    form, table { margin-bottom: 2rem; }
+    input, select, button {
+      padding: 0.5rem;
+      margin: 0.2rem;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #222;
+      color: #eee;
+    }
+    button {
+      cursor: pointer;
+      background: #333;
+    }
+    button:hover { background: #555; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.6rem;
+      border-bottom: 1px solid #333;
+      text-align: left;
+    }
+    tr:hover { background: #1c1c1c; }
+    a { color: #ff6666; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: auto; }
+    .meta { font-size: 0.9rem; color: #aaa; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RFID Cube Admin Panel</h1>
+    <div class="meta">Upload videos, map card UIDs to videos, and view current mappings.</div>
+
+    <h2>Upload Video</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <button type="submit">Upload</button>
+    </form>
+
+    <h2>Map RFID Card</h2>
+    <form action="/map" method="post">
+      <input type="text" name="uid" placeholder="Enter Card UID" required>
+      <select name="file" required>
+        {% for f in files %}
+          <option value="{{ f }}">{{ f }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Map</button>
+    </form>
+
+    <h2>Current Mappings</h2>
+    <table>
+      <tr>
+        <th>Card UID</th>
+        <th>Video File</th>
+        <th>Action</th>
+      </tr>
+      {% for uid, fname in video_map.items() %}
+      <tr>
+        <td>{{ uid }}</td>
+        <td>{{ fname }}</td>
+        <td><a href="/delete/{{ uid }}">Delete</a></td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="3">No mappings yet</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+</html>
