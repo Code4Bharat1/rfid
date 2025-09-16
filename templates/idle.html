@@ -28,14 +28,13 @@
     /* Logos */
     .logo-wrapper {
       display: flex;
-      justify-content: space-between; /* Left - Center - Right */
+      justify-content: space-between;
       align-items: center;
       width: 100%;
       max-width: 1200px;
       margin: 2rem auto 3rem;
       padding: 0 2rem;
     }
-
     .logo {
       max-width: 180px;
       padding: 1rem;
@@ -45,26 +44,14 @@
       box-shadow: 0 6px 24px rgba(14,165,233,0.12);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .logo img { width: 100%; height: auto; max-height: 100px; object-fit: contain; }
 
-    .logo img {
-      width: 100%;
-      height: auto;
-      max-height: 100px;
-      object-fit: contain;
-    }
-
-    /* Responsive Logos */
     @media (max-width: 768px) {
-      .logo-wrapper {
-        flex-direction: column;
-        justify-content: center;
-        gap: 1.5rem;
-      }
+      .logo-wrapper { flex-direction: column; justify-content: center; gap: 1.5rem; }
       .logo { max-width: 140px; }
       .header h1 { font-size: 3rem; }
       .header h2 { font-size: 2rem; }
     }
-
     @media (max-width: 480px) {
       .logo { max-width: 120px; padding: 0.5rem; }
       .header h1 { font-size: 2.2rem; }
@@ -72,21 +59,46 @@
     }
 
     /* News Carousel */
-    .news-carousel { flex: 1; width: 95%; max-width: 1400px; position: relative; overflow: hidden; border-radius: 24px; background: linear-gradient(135deg,#f8fafc 0%,#ffffff 100%); border: 2px solid rgba(14,165,233,0.1); box-shadow:0 12px 40px rgba(14,165,233,0.08); padding:3rem; margin-bottom:2rem; display:flex; flex-direction:column; justify-content:center; min-height:500px; }
-    .carousel-track { position: relative; width: 100%; height: 100%; min-height: 400px; }
-    .news-card { position: absolute; top:0; left:0; width:100%; height:100%; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; padding:1rem; opacity:0; transform:translateX(100px); transition: all 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .news-carousel {
+      flex: 1;
+      width: 95%;
+      max-width: 1400px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: linear-gradient(135deg,#f8fafc 0%,#ffffff 100%);
+      border: 2px solid rgba(14,165,233,0.1);
+      box-shadow:0 12px 40px rgba(14,165,233,0.08);
+      padding:3rem;
+      margin-bottom:2rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:400px;
+    }
+    .carousel-track { position: relative; width: 100%; height: 100%; min-height: 300px; }
+    .news-card {
+      position: absolute; top:0; left:0;
+      width:100%; height:100%;
+      display:flex; flex-direction:column; justify-content:center;
+      padding:1rem;
+      opacity:0; transform:translateX(100px);
+      transition: all 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
     .news-card.active { opacity:1; transform:translateX(0); }
     .news-card.prev { opacity:0; transform:translateX(-100px); }
 
-    .news-image-section { display:flex; justify-content:center; align-items:center; }
-    .news-image { width:100%; max-width:500px; height:320px; object-fit:cover; border-radius:20px; box-shadow:0 15px 40px rgba(14,165,233,0.2); border:3px solid rgba(255,255,255,0.8); transition: transform 0.3s ease; }
-    .news-image:hover { transform: scale(1.02); }
-
-    .news-text-section { display:flex; flex-direction:column; justify-content:center; padding:1rem; }
-    .news-category { display:inline-block; background: linear-gradient(135deg,#0ea5e9,#1e40af); color:white; padding:0.5rem 1rem; border-radius:20px; font-size:0.9rem; font-weight:600; margin-bottom:1rem; width:fit-content; text-transform:uppercase; letter-spacing:0.5px; }
-    .news-headline { font-size:2.4rem; font-weight:800; color:#1e293b; margin-bottom:1.5rem; line-height:1.2; text-align:left; }
-    .news-description { font-size:1.2rem; line-height:1.6; color:#64748b; margin-bottom:2rem; text-align:left; max-height:180px; overflow:hidden; display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical; }
-    .news-meta { display:flex; align-items:center; gap:1rem; color:#94a3b8; font-size:0.95rem; }
+    .news-text-section { padding:1rem; text-align:center; }
+    .news-category {
+      display:inline-block;
+      background: linear-gradient(135deg,#0ea5e9,#1e40af);
+      color:white; padding:0.5rem 1rem;
+      border-radius:20px; font-size:0.9rem; font-weight:600;
+      margin-bottom:1rem; text-transform:uppercase;
+    }
+    .news-headline { font-size:2.4rem; font-weight:800; color:#1e293b; margin-bottom:1.5rem; line-height:1.2; }
+    .news-description { font-size:1.2rem; line-height:1.6; color:#64748b; margin-bottom:2rem; max-height:180px; overflow:hidden; display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical; }
+    .news-meta { display:flex; justify-content:center; gap:1rem; color:#94a3b8; font-size:0.95rem; }
     .news-source { background:#e2e8f0; padding:0.3rem 0.8rem; border-radius:12px; font-weight:500; }
     .news-date { display:flex; align-items:center; gap:0.5rem; }
 
@@ -96,33 +108,20 @@
 
     .loading { display:inline-block; width:50px; height:50px; border:4px solid rgba(14,165,233,0.2); border-top:4px solid #0ea5e9; border-radius:50%; animation:spin 1s linear infinite; }
     @keyframes spin { 0% { transform:rotate(0deg); } 100% { transform:rotate(360deg); } }
-
-    @media(max-width:1024px){ .news-card{ grid-template-columns:1fr; gap:2rem; text-align:center; } .news-headline{ font-size:2rem; text-align:center; } .news-description{text-align:center;} .news-image{height:280px; max-width:400px;} }
-    @media(max-width:768px){ .news-image{height:180px;} .news-title{font-size:1.6rem;} }
-    @media(max-width:480px){ .news-image{height:160px;} }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <div class="header">
     <h1>Welcome</h1>
     <h2>Alliance Group of Company</h2>
   </div>
 
-  <!-- Logos -->
   <div class="logo-wrapper">
-    <div class="logo logo-left">
-      <img src="{{ url_for('static', filename='logo/nexcore_logo.jpg') }}" alt="Nexcore Alliance Logo">
-    </div>
-    <div class="logo logo-center">
-      <img src="{{ url_for('static', filename='logo/edu_logo.jpg') }}" alt="Edu Momentum Logo">
-    </div>
-    <div class="logo logo-right">
-      <img src="{{ url_for('static', filename='logo/sa_logo.jpg') }}" alt="Student Alliance Logo">
-    </div>
+    <div class="logo"><img src="{{ url_for('static', filename='logo/nexcore_logo.jpg') }}" alt="Nexcore Alliance Logo"></div>
+    <div class="logo"><img src="{{ url_for('static', filename='logo/edu_logo.jpg') }}" alt="Edu Momentum Logo"></div>
+    <div class="logo"><img src="{{ url_for('static', filename='logo/sa_logo.jpg') }}" alt="Student Alliance Logo"></div>
   </div>
 
-  <!-- News Section -->
   <div class="news-carousel">
     <div class="carousel-track" id="carouselTrack"></div>
     <div class="indicators" id="indicators"></div>
@@ -159,11 +158,7 @@
           try{ const date = new Date(news.published); formattedDate=date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});} catch(e){}
         }
 
-        const imageUrl = news.image || 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop';
         newsCard.innerHTML=`
-          <div class="news-image-section">
-            <img src="${imageUrl}" class="news-image" alt="${cleanTitle}" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop'">
-          </div>
           <div class="news-text-section">
             <div class="news-category">${category}</div>
             <div class="news-headline">${cleanTitle || 'Tech News Update'}</div>
@@ -181,20 +176,15 @@
     function showLoadingCard(){
       const track = document.getElementById('carouselTrack');
       track.innerHTML=`<div class="news-card active loading">
-        <div class="loading-content">
-          <div class="loading"></div>
-          <div class="news-headline">Loading Latest Tech News...</div>
-          <div class="news-description">Fetching technology updates from multiple sources...</div>
-        </div>
+        <div class="loading"></div>
+        <div class="news-headline">Loading Latest Tech News...</div>
+        <div class="news-description">Fetching technology updates from multiple sources...</div>
       </div>`;
     }
 
     function showErrorCard(){
       const track = document.getElementById('carouselTrack');
       track.innerHTML=`<div class="news-card active">
-        <div class="news-image-section">
-          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop" class="news-image" alt="Tech News">
-        </div>
         <div class="news-text-section">
           <div class="news-category">SYSTEM UPDATE</div>
           <div class="news-headline">Tech News Coming Soon</div>
@@ -237,7 +227,7 @@
 
     function startRotation(){ 
       if(newsData.length<=1) return;
-      rotationInterval=setInterval(()=>{ transitionToNews((currentNewsIndex+1)%newsData.length); },10000);
+      rotationInterval=setInterval(()=>{ transitionToNews((currentNewsIndex+1)%newsData.length); },40000); // 40 sec
     }
     function resetRotation(){ if(rotationInterval){ clearInterval(rotationInterval); startRotation(); }}
 
@@ -246,13 +236,11 @@
       fetchNews();
       setInterval(fetchNews,300000);
 
-      // Logo fade-in
       const logos = document.querySelectorAll('.logo');
       logos.forEach((logo,index)=>{
         logo.style.animationDelay=`${index*0.2}s`;
         logo.style.animation='fadeIn 1s ease-out forwards';
       });
-
       const style=document.createElement('style');
       style.textContent=`@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}`;
       document.head.appendChild(style);

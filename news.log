@@ -34,3 +34,7 @@
 [2025-09-16 12:34:29] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
 [2025-09-16 12:36:16] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
 [2025-09-16 12:36:16] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:42:57] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:42:57] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:43:56] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:43:56] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).

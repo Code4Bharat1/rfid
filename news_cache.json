@@ -1,33 +1,12 @@
 {
-  "generated": 1758006376,
+  "generated": 1758006836,
   "items": [
     {
-      "title": "[RSS The Verge] Facebook gave our data to Cambridge Analytica and all I got was this $38.36",
-      "description": "Remember back in 2023, when we told you how to get your cut of a $725 million class action settlement? A couple of years later, that money is going out. I received an email earlier this week saying my claim had been approved in In...",
-      "link": "https://www.theverge.com/tech/778472/facebook-gave-our-data-to-cambridge-analytica-and-all-i-got-was-this-38-36",
-      "source": "The Verge",
-      "published": "2025-09-15T16:59:46-04:00"
-    },
-    {
-      "title": "[RSS Latest from TechRadar] Ultra-thin Linux laptops pack Ryzen AI 9 365 muscle with silky 120Hz displays and room for massive storage and memory",
-      "description": "Slimbook Evo laptops debut with Ryzen AI 9 power, Linux preinstalled, up to 128GB RAM, 16TB storage, and high-refresh displays.",
-      "link": "https://www.techradar.com/pro/ultra-thin-linux-laptops-pack-ryzen-ai-9-365-muscle-with-silky-120-hz-displays-and-room-for-massive-storage-and-memory",
-      "source": "Latest from TechRadar",
-      "published": "Tue, 16 Sep 2025 07:00:00 +0000"
-    },
-    {
-      "title": "[RSS The Verge] Here are the best AirPods deals you can get right now",
-      "description": "If you know where to look, you can often score discounts on Apple’s ever-expanding AirPods lineup. Both the newer AirPods Max and AirPods 4 (with and without ANC) now consistently receive discounts, as do the latest AirPods Pro with USB-C. Events like Prime Day, Black...",
-      "link": "https://www.theverge.com/21302051/best-apple-airpods-deals",
-      "source": "The Verge",
-      "published": "2025-09-15T17:03:35-04:00"
-    },
-    {
-      "title": "[RSS Latest from TechRadar] AI-written software Is booming: can you trust the vibe?",
-      "description": "With vibe coding, virtually anyone can create functional software code using natural language prompts - or can they?",
-      "link": "https://www.techradar.com/pro/ai-written-software-is-booming-can-you-trust-the-vibe",
-      "source": "Latest from TechRadar",
-      "published": "Tue, 16 Sep 2025 06:43:57 +0000"
+      "title": "[RSS Archive: 2025 - GitHub Changelog] GitHub Enterprise license history tracking now available in public preview",
+      "description": "GitHub Enterprise admins can now view a history of license usage over time. This feature provides a daily snapshot of license additions and removals for GitHub Enterprise Cloud, helping admins&#8230; The post GitHub Enterprise license history tracking now available in public preview appeared first on...",
+      "link": "https://github.blog/changelog/2025-09-15-github-enterprise-license-history-tracking-now-available-in-public-preview",
+      "source": "Archive: 2025 - GitHub Changelog",
+      "published": "Mon, 15 Sep 2025 15:29:58 +0000"
     },
     {
       "title": "[RSS Latest from TechRadar] Roborock's 'Frankenstein' vacuum has the best features of Shark and Dyson – and it's half price just weeks after launch",
@@ -37,88 +16,18 @@
       "published": "Tue, 16 Sep 2025 02:11:38 +0000"
     },
     {
-      "title": "[RSS Latest news] Windows 11 upgrade failed? These are my 4 most powerful troubleshooting secrets",
-      "description": "If you've encountered a problem with a Windows upgrade, you know how maddeningly unhelpful Windows error messages can be. These are my favorite troubleshooting tricks.",
-      "link": "https://www.zdnet.com/article/windows-11-upgrade-failed-these-are-my-4-most-powerful-troubleshooting-secrets/",
-      "source": "Latest news",
-      "published": "Tue, 16 Sep 2025 07:00:00 GMT"
-    },
-    {
-      "title": "[RSS Python Insider] Python 3.14 release candidate 1 is go!",
-      "description": "It’s the first 3.14 release candidate! https://www.python.org/downloads/release/python-3140rc1/ This is the first release candidate of Python 3.14 This release, 3.14.0rc1, is the penultimate release preview. Entering the release candidate phase, only reviewed code changes which are clear bug fixes are allowed between this release candidate and...",
-      "link": "https://pythoninsider.blogspot.com/2025/07/python-314-release-candidate-1-is-go.html",
+      "title": "[RSS Python Insider] Python 3.13.5 is now available!",
+      "description": "When I was younger we would call this a brown paper bag release, but actually, we shouldn’t hide from our mistakes. We’re only human. So, please enjoy: Python 3.13.5&nbsp;&nbsp;https://www.python.org/downloads/release/python-3135/&nbsp;This is the fifth maintenance release of Python 3.13 Python 3.13 is the newest major release of...",
+      "link": "https://pythoninsider.blogspot.com/2025/06/python-3135-is-now-available.html",
       "source": "Python Insider",
-      "published": "2025-07-22T15:47:00.004-04:00"
+      "published": "2025-06-11T18:03:00.001-04:00"
     },
     {
-      "title": "[RSS Archive: 2025 - GitHub Changelog] Enterprise access restrictions with corporate proxies is now generally available",
-      "description": "Enterprise access restrictions via corporate proxies is now generally available for GitHub Enterprise Cloud accounts with Enterprise Managed Users (EMU). With this release, enterprise owners may allow only EMU enterprise&#8230; The post Enterprise access restrictions with corporate proxies is now generally available appeared first on...",
-      "link": "https://github.blog/changelog/2025-09-15-enterprise-access-restrictions-with-corporate-proxies-is-now-generally-available",
-      "source": "Archive: 2025 - GitHub Changelog",
-      "published": "Mon, 15 Sep 2025 20:49:25 +0000"
-    },
-    {
-      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] Teen Innovator Soars to New Heights: Mehar Singh Breaks Guinness World Record with Lightning-Fast Drone Ascent",
-      "description": "",
-      "link": "https://timesofindia.indiatimes.com/gadgets-news/teen-innovator-soars-to-new-heights-mehar-singh-breaks-guinness-world-record-with-lightning-fast-drone-ascent/articleshow/112866457.cms",
-      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
-      "published": "2024-08-28T16:35:03+05:30"
-    },
-    {
-      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] iQoo Z9 Turbo new leak reveals key specifications: All the details",
-      "description": "iQoo set to launch Z9 Turbo with 1.5K display, Snapdragon 8s Gen 3 chipset, 6000mAh battery, 144Hz refresh rate, 50MP dual camera, 80W fast charging at Rs 19,999.",
-      "link": "https://timesofindia.indiatimes.com/gadgets-news/iqoo-z9-turbo-new-leak-reveals-key-specifications-all-the-details/articleshow/108560666.cms",
-      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
-      "published": "2024-03-17T13:12:39+05:30"
-    },
-    {
-      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] Samsung Galaxy A55 vs Vivo V30 Pro: How the two affordable premium Android phones compare",
-      "description": "Samsung Galaxy A55 offers 12GB RAM, 50MP camera, 25W charging at Rs 39,999. Vivo V30 Pro, Rs 41,999, features 12GB RAM, AMOLED display, MediaTek Dimensity 8200, 80W charging. V30 Pro has IP67, 256GB storage.",
-      "link": "https://timesofindia.indiatimes.com/gadgets-news/samsung-galaxy-a55-vs-vivo-v30-pro-how-the-two-affordable-premium-android-phones-compare/articleshow/108555889.cms",
-      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
-      "published": "2024-03-17T15:40:35+05:30"
-    },
-    {
-      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] Samsung Galaxy A35 5G, Galaxy A55 5G price revealed",
-      "description": "",
-      "link": "https://timesofindia.indiatimes.com/gadgets-news/samsung-galaxy-a35-5g-galaxy-a55-5g-india-price-revealed/articleshow/108482530.cms",
-      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
-      "published": "2024-03-14T10:33:47+05:30"
-    },
-    {
-      "title": "[RSS Python Insider] Python 3.14.0rc2 and 3.13.7 are go!",
-      "description": "Not one but two expedited releases! 🎉 🎉 Python 3.14.0rc2 It’s the final 🪄 penultimate 🪄 3.14 release candidate! https://www.python.org/downloads/release/python-3140rc2/ Note: rc2 was originally planned for 2025-08-26, but we fixed a bug that required bumping the magic number stored in Python bytecode (.pyc) files. This...",
-      "link": "https://pythoninsider.blogspot.com/2025/08/python-3140rc2-and-3137-are-go.html",
-      "source": "Python Insider",
-      "published": "2025-08-14T15:15:00.005-04:00"
-    },
-    {
-      "title": "[RSS Hacker News - Front Page: \"\"ai\" \"framework\" \"release\" \"open\" \"source\"\"] Launch HN: Trigger.dev (YC W23) – Open-source platform to build reliable AI apps",
-      "description": "Hi HN, I’m Eric, CTO at Trigger.dev (https://trigger.dev). We’re a developer platform for building and running AI agents and workflows, open-source under the Apache 2.0 license (https://github.com/triggerdotdev/trigger.dev).We provide everything needed to create production-grade agents in your codebase and deploy, run, monitor, and debug them. You...",
-      "link": "https://news.ycombinator.com/item?id=45250720",
-      "source": "Hacker News - Front Page: \"\"ai\" \"framework\" \"release\" \"open\" \"source\"\"",
-      "published": "Mon, 15 Sep 2025 15:20:18 +0000"
-    },
-    {
-      "title": "[RSS The Verge] The Supreme Court is Google’s last hope to avoid an Epic reckoning in October",
-      "description": "The Ninth Circuit Court of Appeals is done with its role in the Epic Google case, and Google won’t be happy with the result. On Friday, the court completely denied its petition to have its Epic v. Google case re-heard — and pressed play on...",
-      "link": "https://www.theverge.com/news/778332/google-epic-play-store-lawsuit-30-days-supreme-court",
+      "title": "[RSS The Verge] Here are the best AirPods deals you can get right now",
+      "description": "If you know where to look, you can often score discounts on Apple’s ever-expanding AirPods lineup. Both the newer AirPods Max and AirPods 4 (with and without ANC) now consistently receive discounts, as do the latest AirPods Pro with USB-C. Events like Prime Day, Black...",
+      "link": "https://www.theverge.com/21302051/best-apple-airpods-deals",
       "source": "The Verge",
-      "published": "2025-09-15T15:56:24-04:00"
-    },
-    {
-      "title": "[RSS Python Insider] Python 3.13.6 is now available",
-      "description": "The latest version of Python 3.13 is now available!Python 3.13.6 &nbsp;https://www.python.org/downloads/release/python-3136/ This is the sixth maintenance release of Python 3.13 Python 3.13 is the newest major release of the Python programming language, and it contains many new features and optimizations compared to Python 3.12. 3.13.6...",
-      "link": "https://pythoninsider.blogspot.com/2025/08/python-3136-is-now-available.html",
-      "source": "Python Insider",
-      "published": "2025-08-06T17:35:00.000-04:00"
-    },
-    {
-      "title": "[RSS Archive: 2025 - GitHub Changelog] Security contact for security notification emails is generally available",
-      "description": "Enterprise admins can now designate a specific contact email for security incident notifications by navigating to Settings &#62; Profile in their enterprise account. This optional field allows for targeted security&#8230; The post Security contact for security notification emails is generally available appeared first on The...",
-      "link": "https://github.blog/changelog/2025-09-14-security-contact-for-security-notification-emails-is-generally-available",
-      "source": "Archive: 2025 - GitHub Changelog",
-      "published": "Mon, 15 Sep 2025 13:00:02 +0000"
+      "published": "2025-09-15T17:03:35-04:00"
     },
     {
       "title": "[RSS Python Insider] Python 3.14.0 beta 4 is here!",
@@ -128,25 +37,32 @@
       "published": "2025-07-08T11:04:00.001-04:00"
     },
     {
-      "title": "[RSS Archive: 2025 - GitHub Changelog] GitHub Enterprise license history tracking now available in public preview",
-      "description": "GitHub Enterprise admins can now view a history of license usage over time. This feature provides a daily snapshot of license additions and removals for GitHub Enterprise Cloud, helping admins&#8230; The post GitHub Enterprise license history tracking now available in public preview appeared first on...",
-      "link": "https://github.blog/changelog/2025-09-15-github-enterprise-license-history-tracking-now-available-in-public-preview",
-      "source": "Archive: 2025 - GitHub Changelog",
-      "published": "Mon, 15 Sep 2025 15:29:58 +0000"
-    },
-    {
-      "title": "[RSS Python Insider] Python 3.13.5 is now available!",
-      "description": "When I was younger we would call this a brown paper bag release, but actually, we shouldn’t hide from our mistakes. We’re only human. So, please enjoy: Python 3.13.5&nbsp;&nbsp;https://www.python.org/downloads/release/python-3135/&nbsp;This is the fifth maintenance release of Python 3.13 Python 3.13 is the newest major release of...",
-      "link": "https://pythoninsider.blogspot.com/2025/06/python-3135-is-now-available.html",
-      "source": "Python Insider",
-      "published": "2025-06-11T18:03:00.001-04:00"
-    },
-    {
       "title": "[RSS Latest news] In 2 years, half of all service calls will be resolved by AI - survey",
       "description": "Service pros agree: AI agents are revolutionizing the service industry by boosting efficiency, cutting costs, and improving customer satisfaction.",
       "link": "https://www.zdnet.com/article/in-2-years-half-of-all-service-calls-will-be-resolved-by-ai-survey/",
       "source": "Latest news",
       "published": "Tue, 16 Sep 2025 02:00:26 GMT"
+    },
+    {
+      "title": "[RSS The Verge] The Supreme Court is Google’s last hope to avoid an Epic reckoning in October",
+      "description": "The Ninth Circuit Court of Appeals is done with its role in the Epic Google case, and Google won’t be happy with the result. On Friday, the court completely denied its petition to have its Epic v. Google case re-heard — and pressed play on...",
+      "link": "https://www.theverge.com/news/778332/google-epic-play-store-lawsuit-30-days-supreme-court",
+      "source": "The Verge",
+      "published": "2025-09-15T15:56:24-04:00"
+    },
+    {
+      "title": "[RSS Python Insider] Python 3.14.0rc2 and 3.13.7 are go!",
+      "description": "Not one but two expedited releases! 🎉 🎉 Python 3.14.0rc2 It’s the final 🪄 penultimate 🪄 3.14 release candidate! https://www.python.org/downloads/release/python-3140rc2/ Note: rc2 was originally planned for 2025-08-26, but we fixed a bug that required bumping the magic number stored in Python bytecode (.pyc) files. This...",
+      "link": "https://pythoninsider.blogspot.com/2025/08/python-3140rc2-and-3137-are-go.html",
+      "source": "Python Insider",
+      "published": "2025-08-14T15:15:00.005-04:00"
+    },
+    {
+      "title": "[RSS Python Insider] Python 3.13.6 is now available",
+      "description": "The latest version of Python 3.13 is now available!Python 3.13.6 &nbsp;https://www.python.org/downloads/release/python-3136/ This is the sixth maintenance release of Python 3.13 Python 3.13 is the newest major release of the Python programming language, and it contains many new features and optimizations compared to Python 3.12. 3.13.6...",
+      "link": "https://pythoninsider.blogspot.com/2025/08/python-3136-is-now-available.html",
+      "source": "Python Insider",
+      "published": "2025-08-06T17:35:00.000-04:00"
     },
     {
       "title": "[RSS Python Insider] Python 3.14.0 beta 3 is here!",
@@ -156,11 +72,67 @@
       "published": "2025-06-17T14:43:00.008-04:00"
     },
     {
-      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] How do graphic designers convert JPG to PDF (Portable Document Format)?",
-      "description": "",
-      "link": "https://timesofindia.indiatimes.com/gadgets-news/how-do-graphic-designers-convert-jpg-to-pdf-portable-document-format/articleshow/110598784.cms",
+      "title": "[RSS Archive: 2025 - GitHub Changelog] Security contact for security notification emails is generally available",
+      "description": "Enterprise admins can now designate a specific contact email for security incident notifications by navigating to Settings &#62; Profile in their enterprise account. This optional field allows for targeted security&#8230; The post Security contact for security notification emails is generally available appeared first on The...",
+      "link": "https://github.blog/changelog/2025-09-14-security-contact-for-security-notification-emails-is-generally-available",
+      "source": "Archive: 2025 - GitHub Changelog",
+      "published": "Mon, 15 Sep 2025 13:00:02 +0000"
+    },
+    {
+      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] iQoo Z9 Turbo new leak reveals key specifications: All the details",
+      "description": "iQoo set to launch Z9 Turbo with 1.5K display, Snapdragon 8s Gen 3 chipset, 6000mAh battery, 144Hz refresh rate, 50MP dual camera, 80W fast charging at Rs 19,999.",
+      "link": "https://timesofindia.indiatimes.com/gadgets-news/iqoo-z9-turbo-new-leak-reveals-key-specifications-all-the-details/articleshow/108560666.cms",
       "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
-      "published": "2024-05-31T18:45:05+05:30"
+      "published": "2024-03-17T13:12:39+05:30"
+    },
+    {
+      "title": "[RSS Python Insider] Python 3.14 release candidate 1 is go!",
+      "description": "It’s the first 3.14 release candidate! https://www.python.org/downloads/release/python-3140rc1/ This is the first release candidate of Python 3.14 This release, 3.14.0rc1, is the penultimate release preview. Entering the release candidate phase, only reviewed code changes which are clear bug fixes are allowed between this release candidate and...",
+      "link": "https://pythoninsider.blogspot.com/2025/07/python-314-release-candidate-1-is-go.html",
+      "source": "Python Insider",
+      "published": "2025-07-22T15:47:00.004-04:00"
+    },
+    {
+      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] Samsung Galaxy A35 5G, Galaxy A55 5G price revealed",
+      "description": "",
+      "link": "https://timesofindia.indiatimes.com/gadgets-news/samsung-galaxy-a35-5g-galaxy-a55-5g-india-price-revealed/articleshow/108482530.cms",
+      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
+      "published": "2024-03-14T10:33:47+05:30"
+    },
+    {
+      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] Samsung Galaxy A55 vs Vivo V30 Pro: How the two affordable premium Android phones compare",
+      "description": "Samsung Galaxy A55 offers 12GB RAM, 50MP camera, 25W charging at Rs 39,999. Vivo V30 Pro, Rs 41,999, features 12GB RAM, AMOLED display, MediaTek Dimensity 8200, 80W charging. V30 Pro has IP67, 256GB storage.",
+      "link": "https://timesofindia.indiatimes.com/gadgets-news/samsung-galaxy-a55-vs-vivo-v30-pro-how-the-two-affordable-premium-android-phones-compare/articleshow/108555889.cms",
+      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
+      "published": "2024-03-17T15:40:35+05:30"
+    },
+    {
+      "title": "[RSS Latest from TechRadar] Ultra-thin Linux laptops pack Ryzen AI 9 365 muscle with silky 120Hz displays and room for massive storage and memory",
+      "description": "Slimbook Evo laptops debut with Ryzen AI 9 power, Linux preinstalled, up to 128GB RAM, 16TB storage, and high-refresh displays.",
+      "link": "https://www.techradar.com/pro/ultra-thin-linux-laptops-pack-ryzen-ai-9-365-muscle-with-silky-120-hz-displays-and-room-for-massive-storage-and-memory",
+      "source": "Latest from TechRadar",
+      "published": "Tue, 16 Sep 2025 07:00:00 +0000"
+    },
+    {
+      "title": "[RSS Latest from TechRadar] AI-written software Is booming: can you trust the vibe?",
+      "description": "With vibe coding, virtually anyone can create functional software code using natural language prompts - or can they?",
+      "link": "https://www.techradar.com/pro/ai-written-software-is-booming-can-you-trust-the-vibe",
+      "source": "Latest from TechRadar",
+      "published": "Tue, 16 Sep 2025 06:43:57 +0000"
+    },
+    {
+      "title": "[RSS Latest news] Windows 11 upgrade failed? These are my 4 most powerful troubleshooting secrets",
+      "description": "If you've encountered a problem with a Windows upgrade, you know how maddeningly unhelpful Windows error messages can be. These are my favorite troubleshooting tricks.",
+      "link": "https://www.zdnet.com/article/windows-11-upgrade-failed-these-are-my-4-most-powerful-troubleshooting-secrets/",
+      "source": "Latest news",
+      "published": "Tue, 16 Sep 2025 07:00:00 GMT"
+    },
+    {
+      "title": "[RSS Hacker News - Front Page: \"\"ai\" \"framework\" \"release\" \"open\" \"source\"\"] Launch HN: Trigger.dev (YC W23) – Open-source platform to build reliable AI apps",
+      "description": "Hi HN, I’m Eric, CTO at Trigger.dev (https://trigger.dev). We’re a developer platform for building and running AI agents and workflows, open-source under the Apache 2.0 license (https://github.com/triggerdotdev/trigger.dev).We provide everything needed to create production-grade agents in your codebase and deploy, run, monitor, and debug them. You...",
+      "link": "https://news.ycombinator.com/item?id=45250720",
+      "source": "Hacker News - Front Page: \"\"ai\" \"framework\" \"release\" \"open\" \"source\"\"",
+      "published": "Mon, 15 Sep 2025 15:20:18 +0000"
     },
     {
       "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] Government issues warning for these Android smartphone and tablet users",
@@ -168,6 +140,34 @@
       "link": "https://timesofindia.indiatimes.com/gadgets-news/government-issues-warning-for-these-android-smartphone-and-tablet-users/articleshow/108471249.cms",
       "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
       "published": "2024-03-13T21:06:41+05:30"
+    },
+    {
+      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] Teen Innovator Soars to New Heights: Mehar Singh Breaks Guinness World Record with Lightning-Fast Drone Ascent",
+      "description": "",
+      "link": "https://timesofindia.indiatimes.com/gadgets-news/teen-innovator-soars-to-new-heights-mehar-singh-breaks-guinness-world-record-with-lightning-fast-drone-ascent/articleshow/112866457.cms",
+      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
+      "published": "2024-08-28T16:35:03+05:30"
+    },
+    {
+      "title": "[RSS Archive: 2025 - GitHub Changelog] Enterprise access restrictions with corporate proxies is now generally available",
+      "description": "Enterprise access restrictions via corporate proxies is now generally available for GitHub Enterprise Cloud accounts with Enterprise Managed Users (EMU). With this release, enterprise owners may allow only EMU enterprise&#8230; The post Enterprise access restrictions with corporate proxies is now generally available appeared first on...",
+      "link": "https://github.blog/changelog/2025-09-15-enterprise-access-restrictions-with-corporate-proxies-is-now-generally-available",
+      "source": "Archive: 2025 - GitHub Changelog",
+      "published": "Mon, 15 Sep 2025 20:49:25 +0000"
+    },
+    {
+      "title": "[RSS The Verge] Facebook gave our data to Cambridge Analytica and all I got was this $38.36",
+      "description": "Remember back in 2023, when we told you how to get your cut of a $725 million class action settlement? A couple of years later, that money is going out. I received an email earlier this week saying my claim had been approved in In...",
+      "link": "https://www.theverge.com/tech/778472/facebook-gave-our-data-to-cambridge-analytica-and-all-i-got-was-this-38-36",
+      "source": "The Verge",
+      "published": "2025-09-15T16:59:46-04:00"
+    },
+    {
+      "title": "[RSS Gadgets News – Latest Technology News, Mobile News & Updates] How do graphic designers convert JPG to PDF (Portable Document Format)?",
+      "description": "",
+      "link": "https://timesofindia.indiatimes.com/gadgets-news/how-do-graphic-designers-convert-jpg-to-pdf-portable-document-format/articleshow/110598784.cms",
+      "source": "Gadgets News – Latest Technology News, Mobile News & Updates",
+      "published": "2024-05-31T18:45:05+05:30"
     }
   ]
 }
