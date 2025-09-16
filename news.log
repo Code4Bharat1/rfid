@@ -1,0 +1,36 @@
+[2025-09-16 11:23:55] GDELT fetch error: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Max retries exceeded with url: /api/v2/doc/doc?query=technology+OR+AI+OR+machine+learning&mode=artlist&format=json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C51EDEA660>, 'Connection to api.gdeltproject.org timed out. (connect timeout=10.0)'))
+[2025-09-16 11:23:55] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 11:28:52] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 11:28:52] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 11:31:19] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 11:31:19] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 11:32:58] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 11:32:58] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 11:38:43] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 11:38:43] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 11:46:23] Idle page load error: name 'get_rotation_index' is not defined
+[2025-09-16 11:48:05] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 11:48:05] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 11:53:23] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 11:53:23] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 11:57:57] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 11:57:57] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:00:42] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:00:42] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:08:57] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:08:57] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:14:23] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:14:23] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:19:37] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:19:37] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:24:42] RSS fetch error https://feed.infoq.com/ai-ml/: [WinError 10053] An established connection was aborted by the software in your host machine
+[2025-09-16 12:24:43] GDELT fetch error: HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Max retries exceeded with url: /api/v2/doc/doc?query=technology+OR+AI+OR+machine+learning&mode=artlist&format=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000269CA4ADA90>: Failed to resolve 'api.gdeltproject.org' ([Errno 11001] getaddrinfo failed)"))
+[2025-09-16 12:24:43] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:29:56] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:29:56] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:33:06] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:33:06] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:34:29] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:34:29] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).
+[2025-09-16 12:36:16] GDELT fetch error: Expecting value: line 1 column 1 (char 0)
+[2025-09-16 12:36:16] CommonCrawl/NewsCrawl fetcher called but is not implemented (requires custom index/WARC handling).

@@ -1,89 +1,766 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>RFID Cube Admin</title>
+  <meta charset="UTF-8">
+  <title>RFID Cube Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: #1e293b;
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
       padding: 2rem;
     }
-    h1, h2 { color: #66ccff; }
-    form, table { margin-bottom: 2rem; }
-    input, select, button {
-      padding: 0.5rem;
-      margin: 0.2rem;
-      border-radius: 6px;
-      border: 1px solid #444;
-      background: #222;
-      color: #eee;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    button {
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0ea5e9, #1e40af);
+      border-radius: 24px;
+      color: white;
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+    }
+
+    .header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .header .meta {
+      font-size: 1.3rem;
+      font-weight: 500;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(14, 165, 233, 0.1);
+      border: 2px solid rgba(14, 165, 233, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 12px 40px rgba(14, 165, 233, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 6px;
+      height: 40px;
+      background: linear-gradient(135deg, #0ea5e9, #1e40af);
+      border-radius: 3px;
+    }
+
+    /* Form Styling */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: end;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .form-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .form-input, .form-select {
+      padding: 1rem 1.5rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      background: #f8fafc;
+      color: #1e293b;
+      transition: all 0.3s ease;
+      min-height: 56px;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: #0ea5e9;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    }
+
+    /* File Upload with Size Limits */
+    .form-input[type="file"] {
+      padding: 1.2rem;
+      background: white;
+      border: 2px dashed #0ea5e9;
       cursor: pointer;
-      background: #333;
+      position: relative;
     }
-    button:hover { background: #555; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+
+    .form-input[type="file"]:hover {
+      border-color: #1e40af;
+      background: #f0f9ff;
+    }
+
+    .upload-info {
+      background: #f0f9ff;
+      border: 1px solid #0ea5e9;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #1e40af;
+    }
+
+    .upload-limits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
       margin-top: 1rem;
     }
-    th, td {
-      padding: 0.6rem;
-      border-bottom: 1px solid #333;
-      text-align: left;
+
+    .limit-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #0ea5e9;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    tr:hover { background: #1c1c1c; }
-    a { color: #ff6666; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 900px; margin: auto; }
-    .meta { font-size: 0.9rem; color: #aaa; margin-bottom: 1rem; }
+
+    .limit-item .quality {
+      font-weight: 600;
+      color: #1e40af;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .limit-item .size {
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    .limit-item .resolution {
+      color: #10b981;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* File validation styles */
+    .file-error {
+      color: #ef4444;
+      background: #fef2f2;
+      border: 1px solid #ef4444;
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .file-success {
+      color: #10b981;
+      background: #ecfdf5;
+      border: 1px solid #10b981;
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0ea5e9, #10b981);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Button Styling */
+    .btn {
+      background: linear-gradient(135deg, #0ea5e9, #1e40af);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* Upload Form Specific */
+    .upload-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: end;
+    }
+
+    /* Map Form Specific */
+    .map-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 1.5rem;
+      align-items: end;
+    }
+
+    /* Table Styling */
+    .table-container {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.1rem;
+    }
+
+    .data-table th {
+      background: linear-gradient(135deg, #0ea5e9, #1e40af);
+      color: white;
+      padding: 1.5rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .data-table td {
+      padding: 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: #374151;
+    }
+
+    .data-table tr:hover {
+      background: #f0f9ff;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: #64748b;
+      font-size: 1.2rem;
+    }
+
+    .empty-state::before {
+      content: "📋";
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    /* Action Links */
+    .action-link {
+      color: #ef4444;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .action-link:hover {
+      background: #fef2f2;
+      border-color: #ef4444;
+      text-decoration: none;
+    }
+
+    /* UID Display */
+    .uid-code {
+      font-family: 'Courier New', monospace;
+      background: #f1f5f9;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #1e40af;
+    }
+
+    /* File Name Display */
+    .file-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .file-name::before {
+      content: "🎥";
+      font-size: 1.2rem;
+    }
+
+    /* Status Indicators */
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #10b981;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+      }
+
+      .header .meta {
+        font-size: 1.1rem;
+      }
+
+      .upload-form,
+      .map-form {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .section-card {
+        padding: 1.5rem;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Loading Animation */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .loading {
+      animation: pulse 2s infinite;
+    }
+
+    /* Success/Error Messages */
+    .message {
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .message.success {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 2px solid #10b981;
+    }
+
+    .message.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 2px solid #ef4444;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>RFID Cube Admin Panel</h1>
-    <div class="meta">Upload videos, map card UIDs to videos, and view current mappings.</div>
+    <!-- Header -->
+    <div class="header">
+      <h1>RFID Cube Admin Panel</h1>
+      <div class="meta">
+        Upload videos, map card UIDs to videos, and manage your RFID-controlled media system with ease.
+      </div>
+    </div>
 
-    <h2>Upload Video</h2>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="file" required>
-      <button type="submit">Upload</button>
-    </form>
+    <!-- Upload Video Section -->
+    <div class="section-card">
+      <h2 class="section-title">Upload Video</h2>
+      <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form" id="uploadForm">
+        <div class="form-group">
+          <label class="form-label" for="videoFile">Select Video File</label>
+          <input type="file" name="file" id="videoFile" class="form-input" required 
+                 accept="video/mp4,video/avi,video/mov,video/mkv,video/webm" 
+                 title="Choose a video file to upload (MP4, AVI, MOV, MKV, WebM)">
+          
+          <!-- File validation messages -->
+          <div class="file-error" id="fileError"></div>
+          <div class="file-success" id="fileSuccess"></div>
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
 
-    <h2>Map RFID Card</h2>
-    <form action="/map" method="post">
-      <input type="text" name="uid" placeholder="Enter Card UID" required>
-      <select name="file" required>
-        {% for f in files %}
-          <option value="{{ f }}">{{ f }}</option>
-        {% endfor %}
-      </select>
-      <button type="submit">Map</button>
-    </form>
+          <!-- Upload Guidelines -->
+          <div class="upload-info">
+            <strong>📋 Upload Guidelines:</strong><br>
+            • Supported formats: MP4, AVI, MOV, MKV, WebM<br>
+            • Maximum file size varies by quality (see limits below)<br>
+            • Recommended: MP4 format for best compatibility
+          </div>
 
-    <h2>Current Mappings</h2>
-    <table>
-      <tr>
-        <th>Card UID</th>
-        <th>Video File</th>
-        <th>Action</th>
-      </tr>
-      {% for uid, fname in video_map.items() %}
-      <tr>
-        <td>{{ uid }}</td>
-        <td>{{ fname }}</td>
-        <td><a href="/delete/{{ uid }}">Delete</a></td>
-      </tr>
-      {% else %}
-      <tr>
-        <td colspan="3">No mappings yet</td>
-      </tr>
-      {% endfor %}
-    </table>
+          <!-- Size Limits by Quality -->
+          <div class="upload-limits">
+            <div class="limit-item">
+              <div class="quality">📱 SD Quality</div>
+              <div class="resolution">480p (640×480)</div>
+              <div class="size">Max: 500 MB</div>
+            </div>
+            <div class="limit-item">
+              <div class="quality">📺 HD Quality</div>
+              <div class="resolution">720p (1280×720)</div>
+              <div class="size">Max: 1.5 GB</div>
+            </div>
+            <div class="limit-item">
+              <div class="quality">🎬 Full HD</div>
+              <div class="resolution">1080p (1920×1080)</div>
+              <div class="size">Max: 3 GB</div>
+            </div>
+            <div class="limit-item">
+              <div class="quality">🎯 2K/QHD</div>
+              <div class="resolution">1440p (2560×1440)</div>
+              <div class="size">Max: 5 GB</div>
+            </div>
+            <div class="limit-item">
+              <div class="quality">🔥 4K Ultra HD</div>
+              <div class="resolution">2160p (3840×2160)</div>
+              <div class="size">Max: 8 GB</div>
+            </div>
+           
+          </div>
+        </div>
+        <button type="submit" class="btn" id="uploadBtn" disabled>
+          <span>📁</span>
+          Select Video First
+        </button>
+      </form>
+    </div>
+
+    <!-- Map RFID Card Section -->
+    <div class="section-card">
+      <h2 class="section-title">Map RFID Card</h2>
+      <form action="/map" method="post" class="map-form">
+        <div class="form-group">
+          <label class="form-label" for="cardUID">Card UID</label>
+          <input type="text" name="uid" id="cardUID" class="form-input" 
+                 placeholder="Enter Card UID (e.g., A1B2C3D4)" required
+                 title="Enter the unique identifier of your RFID card">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="videoFile">Select Video</label>
+          <select name="file" id="videoFile" class="form-select" required>
+            <option value="">Choose a video...</option>
+            {% for f in files %}
+              <option value="{{ f }}">{{ f }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn">
+          <span>🔗</span>
+          Create Mapping
+        </button>
+      </form>
+    </div>
+
+    <!-- Current Mappings Section -->
+    <div class="section-card">
+      <h2 class="section-title">Current Mappings</h2>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th><span class="status-indicator"></span>Card UID</th>
+              <th>Video File</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for uid, fname in video_map.items() %}
+            <tr>
+              <td><span class="uid-code">{{ uid }}</span></td>
+              <td>
+                <div class="file-name">{{ fname }}</div>
+              </td>
+              <td>
+                <a href="/delete/{{ uid }}" class="action-link" 
+                   onclick="return confirm('Are you sure you want to delete this mapping?')">
+                  🗑️ Delete
+                </a>
+              </td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="3" class="empty-state">
+                No mappings created yet<br>
+                <small style="font-size: 1rem; margin-top: 0.5rem; display: block;">
+                  Upload a video and create your first RFID card mapping above.
+                </small>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Statistics/Info Card -->
+    {% if video_map %}
+    <div class="section-card" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border-color: #0ea5e9;">
+      <h2 class="section-title" style="color: #0ea5e9;">System Status</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+        <div style="text-align: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: #0ea5e9;">{{ video_map|length }}</div>
+          <div style="color: #64748b; font-weight: 500;">Active Mappings</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: #10b981;">{{ files|length }}</div>
+          <div style="color: #64748b; font-weight: 500;">Available Videos</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: #8b5cf6;">✓</div>
+          <div style="color: #64748b; font-weight: 500;">System Ready</div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
   </div>
+
+  <script>
+    // Video size limits (in bytes)
+    const SIZE_LIMITS = {
+      '480': 500 * 1024 * 1024,    // 500 MB for SD
+      '720': 1.5 * 1024 * 1024 * 1024,  // 1.5 GB for HD  
+      '1080': 3 * 1024 * 1024 * 1024,   // 3 GB for Full HD
+      '1440': 5 * 1024 * 1024 * 1024,   // 5 GB for 2K
+      '2160': 8 * 1024 * 1024 * 1024,   // 8 GB for 4K
+      
+    };
+
+    // Supported video formats
+    const SUPPORTED_FORMATS = ['mp4', 'avi', 'mov', 'mkv', 'webm'];
+
+    function formatFileSize(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function getVideoQualityFromSize(fileSize) {
+      // Estimate quality based on file size (rough estimation)
+      if (fileSize <= SIZE_LIMITS['480']) return 'SD (480p)';
+      if (fileSize <= SIZE_LIMITS['720']) return 'HD (720p)';
+      if (fileSize <= SIZE_LIMITS['1080']) return 'Full HD (1080p)';
+      if (fileSize <= SIZE_LIMITS['1440']) return '2K (1440p)';
+      if (fileSize <= SIZE_LIMITS['2160']) return '4K (2160p)';
+      
+      return 'Ultra High Quality';
+    }
+
+    function validateVideoFile(file) {
+      const fileError = document.getElementById('fileError');
+      const fileSuccess = document.getElementById('fileSuccess');
+      const uploadBtn = document.getElementById('uploadBtn');
+      
+      // Reset messages
+      fileError.style.display = 'none';
+      fileSuccess.style.display = 'none';
+      
+      // Check file format
+      const fileExtension = file.name.split('.').pop().toLowerCase();
+      if (!SUPPORTED_FORMATS.includes(fileExtension)) {
+        fileError.innerHTML = `❌ Unsupported format: ${fileExtension.toUpperCase()}<br>Supported formats: ${SUPPORTED_FORMATS.map(f => f.toUpperCase()).join(', ')}`;
+        fileError.style.display = 'block';
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<span>❌</span> Invalid Format';
+        return false;
+      }
+
+      // Check file size
+      const maxSize = SIZE_LIMITS['4320']; // Maximum allowed (8K limit)
+      if (file.size > maxSize) {
+        fileError.innerHTML = `❌ File too large: ${formatFileSize(file.size)}<br>Maximum allowed: ${formatFileSize(maxSize)} (8K Ultra HD)`;
+        fileError.style.display = 'block';
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<span>❌</span> File Too Large';
+        return false;
+      }
+
+      // Success - file is valid
+      const estimatedQuality = getVideoQualityFromSize(file.size);
+      fileSuccess.innerHTML = `✅ Valid ${fileExtension.toUpperCase()} file: ${formatFileSize(file.size)}<br>📊 Estimated quality: ${estimatedQuality}`;
+      fileSuccess.style.display = 'block';
+      uploadBtn.disabled = false;
+      uploadBtn.innerHTML = '<span>📁</span> Upload Video';
+      
+      return true;
+    }
+
+    // Add interactive enhancements
+    document.addEventListener('DOMContentLoaded', function() {
+      // File input enhancement with validation
+      const fileInput = document.querySelector('#videoFile');
+      if (fileInput) {
+        fileInput.addEventListener('change', function() {
+          const file = this.files[0];
+          if (file) {
+            validateVideoFile(file);
+            this.style.borderColor = '#10b981';
+            this.style.color = '#10b981';
+          } else {
+            document.getElementById('uploadBtn').disabled = true;
+            document.getElementById('uploadBtn').innerHTML = '<span>📁</span> Select Video First';
+          }
+        });
+      }
+
+      // Add hover effect to table rows
+      const tableRows = document.querySelectorAll('.data-table tbody tr');
+      tableRows.forEach(row => {
+        if (!row.querySelector('.empty-state')) {
+          row.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(4px)';
+            this.style.transition = 'transform 0.2s ease';
+          });
+          
+          row.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+          });
+        }
+      });
+
+      // UID input formatting
+      const uidInput = document.querySelector('#cardUID');
+      if (uidInput) {
+        uidInput.addEventListener('input', function() {
+          this.value = this.value.toUpperCase();
+        });
+      }
+
+      // Form submission enhancement with progress simulation
+      const uploadForm = document.querySelector('#uploadForm');
+      if (uploadForm) {
+        uploadForm.addEventListener('submit', function(e) {
+          const button = this.querySelector('button[type="submit"]');
+          const progressBar = document.getElementById('progressBar');
+          const progressFill = document.getElementById('progressFill');
+          
+          if (button && !button.disabled) {
+            button.style.opacity = '0.7';
+            button.innerHTML = '<span>⏳</span> Uploading...';
+            
+            // Show progress bar
+            progressBar.style.display = 'block';
+            
+            // Simulate upload progress (you can replace with real progress)
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+              progress += Math.random() * 15;
+              if (progress > 100) progress = 100;
+              progressFill.style.width = progress + '%';
+              
+              if (progress >= 100) {
+                clearInterval(progressInterval);
+                button.innerHTML = '<span>✅</span> Upload Complete';
+              }
+            }, 200);
+          }
+        });
+      }
+
+      // Other forms
+      const otherForms = document.querySelectorAll('form:not(#uploadForm)');
+      otherForms.forEach(form => {
+        form.addEventListener('submit', function() {
+          const button = this.querySelector('button[type="submit"]');
+          if (button) {
+            button.style.opacity = '0.7';
+            button.innerHTML = '<span>⏳</span> Processing...';
+          }
+        });
+      });
+
+      // Add file size info to limit items on hover
+      const limitItems = document.querySelectorAll('.limit-item');
+      limitItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-2px)';
+          this.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
